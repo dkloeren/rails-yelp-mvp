@@ -1,7 +1,5 @@
-<%= simple_form_for @review do |f| %>
-  <%= f.label :content%>
-  <%= f.text_field :content %>
-  <%= f.label :rating%>
-  <%= f.number_field :rating %>
-  <%= f.submit%>
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :content, label: 'Your review'%>
+  <%= f.input :rating, label: 'Rating', as: :integer%>
+  <%= f.button :submit%>
 <% end %>
